@@ -1,0 +1,66 @@
+.button {
+    position: absolute;
+    right: 10px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    outline: none;
+    background-color: rgb(128, 128, 128);
+    border: 1px solid rgb(128, 128, 128);
+  }
+  form {
+    margin: auto;
+    margin-top: 30px;
+    padding: 5px;
+    background: rgb(255, 255, 255);
+    width: 30%;
+    border-radius: 16px;
+  }
+
+  .material {
+    position: relative;
+    padding: 0;
+    margin: 5px;
+    border: none;
+    overflow: visible;
+  }
+  input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 12px 10px 8px;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    border-bottom: 1px solid rgb(221, 221, 221);
+    font-size: 120%;
+    outline: none;
+    cursor: text;
+    color: rgb(69, 68, 68);
+  }
+
+  hr {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 2px;
+    border: none;
+    background: rgb(128, 128, 128);;
+    font-size: 1px;
+    will-change: transform, visibility;
+    transition: all 200ms ease-out;
+    transform: scaleX(0);
+    visibility: hidden;
+    z-index: 10;
+  }
+  input:focus ~ hr {
+    transform: scaleX(1);
+    visibility: visible;
+  }

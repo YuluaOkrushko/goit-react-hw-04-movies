@@ -1,0 +1,20 @@
+.cast {
+    padding: 0;
+    margin: 0;
+    padding-top: 10px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .castItem {
+    margin: 2px;
+    width: 200px;
+    border: 1px solid rgb(128, 128, 128);
+  }
+
+  .castItem > img {
+    width: 180px;
+    height: auto;
+  }

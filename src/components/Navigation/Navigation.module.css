@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: rgba(238, 230, 230, 0.76);
+  }
+
+  .nav ul {
+    list-style: none;
+    background-color: rgb(118 105 105);
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  }
+  .nav li {
+    font-family: "Oswald", sans-serif;
+    font-size: 19px;
+    line-height: 40px;
+    height: 40px;
+  }
+
+  .link {
+    display: block;
+    color: rgb(255, 255, 255);
+    font-family: "Oswald", sans-serif;
+    font-size: 20px;
+    line-height: 40px;
+    height: 40px;
+    margin-right: 10px;
+    text-decoration: none
+  }
+
+  .active {
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    border-radius: 10px;
+    color: rgb(214, 214, 214);
+  }
+
+  .nav li {
+      display: inline-block;
+      margin-right: 10px;
+    }

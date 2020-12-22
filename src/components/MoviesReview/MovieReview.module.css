@@ -1,0 +1,19 @@
+.review {
+    width: 80%;
+    margin: auto;
+    color: rgb(69, 68, 68);
+  }
+
+  .review > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: left;
+  }
+
+  .author {
+    font-size: 26px;
+    text-align: left;
+    color: rgb(87, 11, 11);
+    font-family: "Montserrat", helvetica, arial, sans-serif;
+  }
