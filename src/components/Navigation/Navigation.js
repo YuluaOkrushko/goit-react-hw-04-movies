@@ -8,14 +8,16 @@ const Navbar = () => {
         <nav className={styles.nav}>
             <ul>
                 <li>
-                    <NavLink to={routes.home}
-                             className={styles.link}
-                             activeClassName={styles.active}>Home</NavLink>
+                    <NavLink exact to={routes.home}
+                            className={styles.link}
+                             activeClassName={styles.active}
+                             >Home</NavLink>
                 </li>
                 <li>
-                    <NavLink to={routes.movies}
+                    <NavLink exact to={routes.movies}
                              className={styles.link}
-                             activeClassName={styles.active}>Movies</NavLink>
+                             activeClassName={styles.active}
+                            >Movies</NavLink>
                 </li>
             </ul>
         </nav>

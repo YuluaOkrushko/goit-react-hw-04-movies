@@ -12,19 +12,28 @@ export default class MovieSearch extends Component {
         movieList: []
     }
 
+    componentDidMount()
+    {
+        const search = localStorage.getItem("searchValue");
+        if(search)
+        {
+            document.querySelector("[name=movieInput]").value = search;
+            this.movieSearch(search);
+        }
+    }
+
     makeRequest = (inputValue) => {
         tvApi
         .search(inputValue)
         .then((response) => {
-            this.setState(({movieList}) => ({
-                movieList: [...movieList,...response.results]
+            this.setState(() => ({
+                movieList: [...response.results]
             }))
         }).catch((error) => console.log(error))
     }
 
-    handleSubmit = (e) => {
-        e.preventDefault();
-        const search = e.target.movieInput.value;
+    movieSearch = (search)=>
+    {
         this.setState((prevState) => {
             if (prevState.inputValue !== search) {
                 return {
@@ -33,10 +42,17 @@ export default class MovieSearch extends Component {
                 }
             }
         })
+        localStorage.setItem("searchValue", search);
         this.makeRequest(search);
     }
 
-    render(){
+    handleSubmit = (e) => {
+        e.preventDefault();
+        const search = e.target.movieInput.value;
+        this.movieSearch(search);
+    }
+
+    render() {
         const {movieList} = this.state;
         return(
             <>
