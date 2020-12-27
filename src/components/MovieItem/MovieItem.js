@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import {NavLink} from "react-router-dom";
-import PropTypes from 'prop-types';
 import styles from "./MovieItem.module.css"
 
 export default class MovieItem extends Component
@@ -11,6 +10,8 @@ export default class MovieItem extends Component
 
   render() {
     const items = this.props.items;
+
+    const currentRoute = window.location.pathname;
     return (
       <>
         {items.map((item) => (
@@ -27,7 +28,11 @@ export default class MovieItem extends Component
                   }
             }
             className={styles.movieCard}>
-            <NavLink to={{ pathname: `/movies/${item.id}` }}>
+            <NavLink to={
+              {
+                pathname: `/movies/${item.id}`,
+                state: {from: currentRoute}
+              }}>
               <div className={styles.movieCardOverlay}></div>
               <div className={styles.movieCardContent}>
                 <div className={styles.movieCardHeader}>

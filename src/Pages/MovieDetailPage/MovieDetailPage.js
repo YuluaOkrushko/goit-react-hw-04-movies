@@ -45,6 +45,7 @@ export default class MovieDetailPage extends Component{
     }
 
     render(){
+        const {location} = this.props;
         const {
             id,
             poster_path,
@@ -80,12 +81,19 @@ export default class MovieDetailPage extends Component{
                     <div className={styles.nav}>
                         <ul>
                             <li>
-                                <NavLink to={{pathname: `/movies/${id}/cast`}}
+                                <NavLink to={{pathname: `/movies/${id}/cast`,
+                                state: {from: location?.state?.from || "/movies"}
+                            }}
                                          className={styles.link}
                                          activeClassName={styles.active}>Cast</NavLink>
                             </li>
                             <li>
-                                <NavLink to={{pathname: `/movies/${id}/reviews`}}
+                                <NavLink to={
+                                    {
+                                        pathname: `/movies/${id}/reviews`,
+                                        state: {from: location?.state?.from || "/movies"}
+                                    }
+                                    }
                                          className={styles.link}
                                          activeClassName={styles.active}>Reviews</NavLink>
                             </li>
